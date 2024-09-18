@@ -18,7 +18,9 @@ class Game:
         self.quiz_loop()
 
     def provide_question(self):
-        print(f"This is card number {self.round.turns + 1} out of {len(self.cards)}.")
+        print(
+            f"This is card number {self.round.turn_number + 1} out of {len(self.cards)}."
+        )
         print(f"Question: {self.round.current_card().question}")
 
     def provide_feedback(self, turn):
@@ -47,7 +49,7 @@ class Game:
     def show_results(self):
         print("****** Game over! ******")
         print(
-            f"You had {self.round.number_correct()} correct guesses out of {len(self.cards)} for a total score of {round(100 * self.round.number_correct / self.deck.count)}%."
+            f"You had {self.round.number_correct} correct guesses out of {len(self.cards)} for a total score of {round(100 * self.round.number_correct / self.deck.count())}%."
         )
         for category in self.categories_array():
             print(
@@ -58,6 +60,7 @@ class Game:
         print("Would you like to play again? (yes/no)")
         answer = input()
         if answer == "yes":
+            self.round = Round(self.deck)
             self.start()
         else:
             print("Goodbye!")

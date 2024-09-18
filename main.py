@@ -1,5 +1,9 @@
+from flash_cards.game import Game
+
+
 def main():
-    print("Hello, World!")
+    game = Game()
+    game.start()
 
 
 if __name__ == "__main__":
