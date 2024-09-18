@@ -30,13 +30,16 @@ A simple flash cards application written in Python.
     ```
 
 ## Testing
-To run the test suite, run `pytest` from the virtual environment.
+To run the test suite, run pytest from the virtual environment:
+  ```sh
+  pytest
+  ```
 
 ## Usage
 Run the main script to start the flash cards application:
-    ```sh
-    python3 main.py
-    ```
+  ```sh
+  python3 main.py
+  ```
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
